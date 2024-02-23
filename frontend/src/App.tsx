@@ -1,35 +1,46 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.scss';
 
-function App() {
-  const [count, setCount] = useState(0);
+const Questionnaire = () => {
+  const questions: Array<string> = [
+    'Do you have sensitive skin?',
+    'Is your skin type generally oily?',
+    'Have you noticed any changes in your skin type over time?',
+    'Are you primarily concerned about acne?',
+    'Do you use sunscreen every day?',
+  ];
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
+  const [answers, setAnswers] = useState<Array<string>>([]);
+
+  const handleAnswer = (answer: string) => {
+    setAnswers((prevAnswers: Array<string>) => [...prevAnswers, answer]);
+
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex((prevIndex: number) => prevIndex + 1);
+    } else {
+      console.log('Thank you for completing the questionnaire!');
+
+      sendDataToAPI(answers);
+    }
+  };
+
+  const sendDataToAPI = (data: Array<string>) => {
+    console.log('Data to be sent to API:', data);
+  };
 
   return (
-    <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
+    <section className='col-12 col-lg-6'>
+      <div className='header' key={currentQuestionIndex}>
+        <h2>Question {[currentQuestionIndex + 1]}:</h2>
+        <h2>{questions[currentQuestionIndex]}</h2>
       </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className='buttons'>
+        <button onClick={() => handleAnswer('Yes')}>Yes</button>
+        <button onClick={() => handleAnswer('No')}>No</button>
       </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </section>
   );
-}
+};
 
-export default App;
+export default Questionnaire;
