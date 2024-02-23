@@ -8,15 +8,35 @@ footer {
   background-color: white;
   color: black;
   text-align: center;
-  display: flex;
   padding: 10px !important;
-  div {
+  padding-top: 20px !important;
+  padding-bottom: 30px !important;
+  .sub-header {
+    font-weight: 900;
+    padding-bottom: 10px;
+  }
+
+  ul {
+    li {
+      padding-top: 5px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .img-container {
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10px;
-    &:last-child {
+    padding-bottom: 30px;
+    @include large {
       padding-bottom: 0;
     }
+  }
+
+  ul {
+    padding-bottom: 30px;
     @include large {
       padding-bottom: 0;
     }
