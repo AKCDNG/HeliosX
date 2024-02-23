@@ -2,9 +2,8 @@
 
 ## How to run
 
-Clone respository
-cd into frontend/
-run `npm install`
-run `npm run dev`
-navigate to `localhost:5173`
-
+1. Clone respository
+2. cd into frontend/
+3. run `npm install`
+4. run `npm run dev`
+5. navigate to `localhost:5173`
