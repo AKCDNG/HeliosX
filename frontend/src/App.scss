@@ -1,25 +1,41 @@
 @import 'variables.scss';
 
-section {
-  margin-top: 20px !important;
-  margin-left: 20px !important;
-  h3 {
-    margin-top: 10px;
-  }
-
-  .buttons {
-    margin-top: 10px;
-    button {
-      background: transparent;
-      border-style: solid;
-      background-color: black;
-      color: white;
-      padding: 10px 20px;
-      margin-right: 5px;
+.wrapper {
+  section {
+    @include large {
+    }
+    .question-wrap {
+      background-color: #70dcc4;
+      padding: 100px 20px 100px 20px;
       border-radius: 50px;
-      &:hover {
-        background-color: white;
-        color: black;
+      margin-top: 0;
+      @include large {
+        margin-top: 100px;
+      }
+    }
+
+    h3 {
+      margin-top: 10px;
+    }
+
+    .thank-you-msg {
+      padding-top: 100px;
+    }
+
+    .buttons {
+      margin-top: 10px;
+      button {
+        background: transparent;
+        border-style: solid;
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        margin-right: 5px;
+        border-radius: 50px;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
       }
     }
   }
