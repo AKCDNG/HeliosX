@@ -1,0 +1,26 @@
+@import 'variables.scss';
+
+section {
+  margin-top: 20px !important;
+  margin-left: 20px !important;
+  h3 {
+    margin-top: 10px;
+  }
+
+  .buttons {
+    margin-top: 10px;
+    button {
+      background: transparent;
+      border-style: solid;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      margin-right: 5px;
+      border-radius: 50px;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
