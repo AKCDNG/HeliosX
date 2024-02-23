@@ -33,7 +33,7 @@ const Questionnaire = () => {
     <section className='col-12 col-lg-6'>
       <div className='header' key={currentQuestionIndex}>
         <h2>Question {[currentQuestionIndex + 1]}:</h2>
-        <h2>{questions[currentQuestionIndex]}</h2>
+        <h3>{questions[currentQuestionIndex]}</h3>
       </div>
       <div className='buttons'>
         <button onClick={() => handleAnswer('Yes')}>Yes</button>
