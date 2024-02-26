@@ -39,7 +39,7 @@ const Questionnaire = () => {
         {currentQuestionIndex < 5 ? (
           <div className='question-wrap'>
             <div className='row'>
-              <div className='header col-12' key={currentQuestionIndex}>
+              <div className='question-text col-12' key={currentQuestionIndex}>
                 <h2>Question {[currentQuestionIndex + 1]}:</h2>
                 <h3>{questions[currentQuestionIndex]}</h3>
               </div>
