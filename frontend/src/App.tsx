@@ -35,7 +35,6 @@ const Questionnaire = () => {
 
   return (
     <div className='wrapper'>
-      <Header />
       <section className='container'>
         {currentQuestionIndex < 5 ? (
           <div className='question-wrap'>

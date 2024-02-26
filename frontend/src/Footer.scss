@@ -1,9 +1,10 @@
 @import 'variables.scss';
 
 footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
+  height: max-content;
   width: 100%;
   background-color: white;
   color: black;
